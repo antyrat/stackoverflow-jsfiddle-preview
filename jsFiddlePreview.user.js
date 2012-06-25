@@ -34,8 +34,12 @@ function addJsFiddlePreview( $ ) {
 					// show embedded jsFiddle at bottom
 					jsFiddleButton.click( function(  ) {
 						if( $( this ).data( 'visible' ) === false) {
+							var iframeLink = jsFiddleLink[0];
+							if(iframeLink[iframeLink.length - 1] == "/") {
+								iframeLink = iframeLink.substr(0, iframeLink.length - 1);
+							}
 							$( this ).addClass( 'disabled-button' ).data( 'visible', 'true' );
-							$( '<div><iframe src="' + jsFiddleLink[0] + '/embedded/" width="650" height="400" style="border:2px solid #3D668F;"></iframe></div>' ).appendTo( postContainer );
+							$( '<div><iframe src="' + iframeLink + '/embedded/" width="650" height="400" style="border:2px solid #3D668F;"></iframe></div>' ).appendTo( postContainer );
 						}
 					});
 				}
