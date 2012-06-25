@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          Stackoverflow jsFiddle viewer
 // @author        Sergey Shchur aka antyrat (http://stackoverflow.com/users/186535/antyrat)
-// @description   Adds embedded jsFiddle content to the questions/answers posts. 
+// @description   Adds embedded jsFiddle preview to the questions/answers posts. 
 // @include       http://www.stackoverflow.com/questions*
 // @include       http://stackoverflow.com/questions/*
 // @version       1.0
@@ -23,7 +23,7 @@ function addJsFiddlePreview( $ ) {
 		if( postLinks ) {
 			// collect all href links in answers and (or) question
 			postLinks.each( function( ) {
-				var jsFiddleLink = $( this ).attr( 'href' ).match( /http:\/\/jsfiddle\.net\/([A-Za-z0-9]+)/ );
+				var jsFiddleLink = $( this ).attr( 'href' ).match( /http:\/\/jsfiddle\.net\/([A-Za-z0-9\/]+)/ );
 				
 				if( jsFiddleLink && jsFiddleLink[ 0 ] && jsFiddleLink[ 1 ] ) {
 					
