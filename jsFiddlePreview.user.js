@@ -23,7 +23,7 @@ function addJsFiddlePreview( $ ) {
         if( postLinks ) {
             // collect all href links in answers and (or) question
             postLinks.each( function( ) {
-                var jsFiddleLink = $( this ).attr( 'href' ).match( /http:\/\/jsfiddle\.net\/([A-Za-z0-9\/]+)/ );
+                var jsFiddleLink = $( this ).attr( 'href' ).match( /http:\/\/jsfiddle\.net\/([A-Za-z0-9\/_]+)/ );
 
                 if( jsFiddleLink && jsFiddleLink[ 0 ] && jsFiddleLink[ 1 ] ) {
 
